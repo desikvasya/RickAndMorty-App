@@ -26,11 +26,31 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func setupCollectionView() {
         collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
+        collectionView.register(CollectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
 
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if collectionView == collectionView {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? CollectionHeaderSupplementaryView else {
+                fatalError("Unable to dequeue CollectionHeaderSupplementaryView")
+            }
+            header.title.text = "Characters"
+            return header
+        } else {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? CollectionHeaderSupplementaryView else {
+                fatalError("Unable to dequeue CollectionHeaderSupplementaryView")
+            }
+
+            return header
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 40)
+    }
     
     private func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections()

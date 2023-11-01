@@ -22,6 +22,7 @@
 		39FA87962AF2109D00ACE03E /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA87952AF2109D00ACE03E /* NetworkDataFetch.swift */; };
 		39FA879A2AF211BE00ACE03E /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA87992AF211BE00ACE03E /* Characters.swift */; };
 		39FA879D2AF2127900ACE03E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA879C2AF2127900ACE03E /* MainCell.swift */; };
+		39FA879F2AF2504D00ACE03E /* CollectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA879E2AF2504D00ACE03E /* CollectionHeaderSupplementaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		39FA87952AF2109D00ACE03E /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		39FA87992AF211BE00ACE03E /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		39FA879C2AF2127900ACE03E /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		39FA879E2AF2504D00ACE03E /* CollectionHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				39FA87712AF2046700ACE03E /* CharactersViewController.swift */,
 				39FA87812AF20F2500ACE03E /* CharactersViewController + CollectionView.swift */,
+				39FA879E2AF2504D00ACE03E /* CollectionHeaderSupplementaryView.swift */,
 				39FA879B2AF2126600ACE03E /* Cells */,
 			);
 			path = Views;
@@ -247,6 +250,7 @@
 				39FA879A2AF211BE00ACE03E /* Characters.swift in Sources */,
 				39FA87962AF2109D00ACE03E /* NetworkDataFetch.swift in Sources */,
 				39FA87702AF2046700ACE03E /* SceneDelegate.swift in Sources */,
+				39FA879F2AF2504D00ACE03E /* CollectionHeaderSupplementaryView.swift in Sources */,
 				39FA87822AF20F2500ACE03E /* CharactersViewController + CollectionView.swift in Sources */,
 				39FA87882AF20FA100ACE03E /* MainCellViewModel.swift in Sources */,
 			);
