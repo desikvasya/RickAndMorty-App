@@ -21,6 +21,7 @@ class MainCell: UICollectionViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
@@ -83,7 +84,6 @@ class MainCell: UICollectionViewCell {
         addSubview(characterImage)
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 16),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
@@ -92,5 +92,12 @@ class MainCell: UICollectionViewCell {
             characterImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             characterImage.heightAnchor.constraint(equalToConstant: 140),
         ])
+        
+        let constraint1 = nameLabel.topAnchor.constraint(lessThanOrEqualTo: characterImage.bottomAnchor, constant: 16)
+        constraint1.priority = UILayoutPriority(1000)
+        constraint1.isActive = true
+        let constraint2 = nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
+        constraint2.priority = UILayoutPriority(999)
+        constraint2.isActive = true
     }
 }

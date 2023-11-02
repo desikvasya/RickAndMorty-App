@@ -19,11 +19,13 @@ class OriginCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.textColor = .white
         return label
     }()
     
     private let episodesHeader: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .semibold)
         return label
@@ -44,6 +46,7 @@ class OriginCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.textAlignment = .center
+        label.textColor = .white
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false

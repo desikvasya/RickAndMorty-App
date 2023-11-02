@@ -38,6 +38,8 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
                 fatalError("Unable to dequeue CollectionHeaderSupplementaryView")
             }
             header.title.text = "Characters"
+            header.title.textColor = .white
+
             return header
         } else {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? CollectionHeaderSupplementaryView else {

@@ -88,14 +88,14 @@
 		39FA876C2AF2046700ACE03E /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				39FA87982AF211A400ACE03E /* Models */,
 				39FA87972AF210EA00ACE03E /* Application */,
-				39FA878B2AF20FFC00ACE03E /* SupportingFiles */,
-				39FA878C2AF2102300ACE03E /* Extensions */,
-				39FA878A2AF20FF300ACE03E /* Helpers */,
-				39FA87892AF20FD100ACE03E /* Network */,
+				39FA87982AF211A400ACE03E /* Models */,
 				39FA87842AF20F5000ACE03E /* Views */,
 				39FA87832AF20F4200ACE03E /* ViewModels */,
+				39FA87892AF20FD100ACE03E /* Network */,
+				39FA878C2AF2102300ACE03E /* Extensions */,
+				39FA878A2AF20FF300ACE03E /* Helpers */,
+				39FA878B2AF20FFC00ACE03E /* SupportingFiles */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@ class DetailedCharacterCell: UICollectionViewCell {
     var name: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
         label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
