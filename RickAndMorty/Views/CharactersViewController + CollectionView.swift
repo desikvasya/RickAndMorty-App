@@ -90,6 +90,13 @@ extension CharactersViewController {
     }
 }
 
+extension CharactersViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let dataSource = viewModel.dataSource else {return}
+        presentDetailedViewController(character: dataSource[indexPath.row])
+        
+    }
+}
 
 extension UIImage {
     func resized(to newSize: CGSize) -> UIImage {

@@ -47,6 +47,17 @@ class CharactersViewController: UIViewController {
         activityIndicator.color = .white
     }
     
+    func presentDetailedViewController(character: DetailsCharacter) {
+        let detailedViewModel = DetailedViewmodel(characters: character)
+        let detailedVC = DetailedViewController(detailedViewModel)
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationItem.backBarButtonItem?.imageInsets = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 0)
+        
+        navigationController?.pushViewController(detailedVC, animated: true)
+    }
+    
     private func bindViewModel() {
         viewModel.isLoading.bind { [weak self] isLoading in
             guard let self = self, let isLoading else { return }
@@ -83,4 +94,3 @@ extension CharactersViewController {
         ])
     }
 }
-
