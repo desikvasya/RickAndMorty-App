@@ -20,12 +20,10 @@ final class DetailedViewController: UIViewController, UICollectionViewDelegate, 
         case episodes
     }
 
-    // Update the numberOfSections method
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.allCases.count
     }
 
-    // Update the numberOfItemsInSection method
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch Section(rawValue: section) {
         case .detailedCharacter:
@@ -41,7 +39,6 @@ final class DetailedViewController: UIViewController, UICollectionViewDelegate, 
         }
     }
 
-    // Update the cellForItemAt method to handle the DetailedCharacterCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let section = Section(rawValue: indexPath.section) else {
             return UICollectionViewCell()
@@ -49,7 +46,6 @@ final class DetailedViewController: UIViewController, UICollectionViewDelegate, 
 
         switch section {
         case .detailedCharacter:
-            // Create and configure the DetailedCharacterCell
             guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DetailedCharacterCell.identifier, for: indexPath) as? DetailedCharacterCell else {
                 fatalError("Unable to dequeue DetailedCharacterCell")
             }
@@ -119,7 +115,6 @@ final class DetailedViewController: UIViewController, UICollectionViewDelegate, 
         view.backgroundColor = UIColor(named: "Space")
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-//        layout.minimumLineSpacing = 64
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -134,7 +129,7 @@ extension DetailedViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.bounds.width
 
         if indexPath.section == Section.detailedCharacter.rawValue {
-            return CGSize(width: width, height: 210) // Adjust the height as needed to create more space
+            return CGSize(width: width, height: 210)
         } else if indexPath.section == Section.info.rawValue {
             return CGSize(width: width, height: 124)
         } else if indexPath.section == Section.origin.rawValue && indexPath.item == 0 {
@@ -146,7 +141,7 @@ extension DetailedViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == Section.detailedCharacter.rawValue {
-            return CGSize(width: collectionView.frame.width, height: -10) // Adjust the height to move the first element higher
+            return CGSize(width: collectionView.frame.width, height: 5) // Adjust the height to move the first element higher
         } else {
             return CGSize(width: collectionView.frame.width, height: 64) // For other sections
         }
