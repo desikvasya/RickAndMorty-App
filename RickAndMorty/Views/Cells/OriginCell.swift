@@ -78,12 +78,19 @@ class OriginCell: UICollectionViewCell {
         planetName.text = "Planet"
         headerLabel.text = "Origin"
         episodesHeader.text = "Episodes"
+        
+        if (viewModel.origin?.name.count)! <= 30 {
+            planetLabel.textAlignment = .left
+            planetLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        } else {
+            planetLabel.textAlignment = .left
+            planetLabel.font = .systemFont(ofSize: 15, weight: .semibold)
+        }
     }
     
     private func setupViews() {
         layer.cornerRadius = 16
         
-        // Create the dark gray square with rounded corners
         let squareView = UIView()
         squareView.translatesAutoresizingMaskIntoConstraints = false
         squareView.backgroundColor = UIColor(named: "PlanetBackground")

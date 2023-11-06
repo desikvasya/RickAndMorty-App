@@ -62,9 +62,21 @@ class EpisodesCell: UICollectionViewCell {
     }
     
     private func updateUI(with episode: Episode) {
-        episodeName.text = episode.name
+        let maxCharacterLimitForEpisodeName = 30
+        let episodeNameText = episode.name
+        episodeName.text = truncateText(episodeNameText, to: maxCharacterLimitForEpisodeName)
         episodeNumber.text = convertToEpisodeFormat(episode.episode)
         episodeDate.text = episode.airDate
+    }
+    
+    func truncateText(_ text: String, to limit: Int) -> String {
+        if text.count <= 40 {
+            episodeName.font = .systemFont(ofSize: 17, weight: .semibold)
+            return text
+        } else {
+            episodeName.font = .systemFont(ofSize: 15, weight: .semibold)
+            return text
+        }
     }
     
     func setupCell(viewModel: DetailedViewmodel, episodeURL: String) {
@@ -81,7 +93,7 @@ class EpisodesCell: UICollectionViewCell {
             }
         }
     }
-
+    
     func convertToEpisodeFormat(_ input: String) -> String {
         let scanner = Scanner(string: input)
         var season: Int = 0

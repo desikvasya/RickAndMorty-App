@@ -76,7 +76,7 @@ class MainCell: UICollectionViewCell {
             print("Invalid image URL")
         }
     }
-
+    
     private func setupViews() {
         layer.cornerRadius = 16
         

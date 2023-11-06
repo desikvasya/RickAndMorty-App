@@ -27,7 +27,7 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     func setupCollectionView() {
         collectionView.register(MainCell.self, forCellWithReuseIdentifier: MainCell.identifier)
         collectionView.register(CollectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-
+        
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -39,13 +39,13 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
             }
             header.title.text = "Characters"
             header.title.textColor = .white
-
+            
             return header
         } else {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? CollectionHeaderSupplementaryView else {
                 fatalError("Unable to dequeue CollectionHeaderSupplementaryView")
             }
-
+            
             return header
         }
     }

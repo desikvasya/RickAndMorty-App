@@ -36,7 +36,7 @@ class DetailedViewmodel {
         self.image = characters.image
         
     }
-
+    
     var statusString: String {
         switch status {
         case .alive:

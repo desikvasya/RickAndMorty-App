@@ -23,12 +23,12 @@ class NetworkDataFetch {
                 response(nil, .urlRequestError(error))
                 return
             }
-
+            
             guard let data = data else {
                 response(nil, .urlSessionError)
                 return
             }
-
+            
             do {
                 let welcome = try JSONDecoder().decode(BaseInfo.self, from: data)
                 let characters = welcome.results
@@ -38,7 +38,7 @@ class NetworkDataFetch {
             }
         }.resume()
     }
-
+    
     
     func fetchEpisodeData(fromURL url: URL, completion: @escaping (Result<Episode, Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in

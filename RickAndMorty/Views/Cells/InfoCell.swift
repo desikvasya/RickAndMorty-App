@@ -104,14 +104,23 @@ class InfoCell: UICollectionViewCell {
         headerLabel.text = "Info"
         genderLabel.text = viewModel.genderString
         speciesLabel.text = viewModel.species
-        typeLabel.text = viewModel.type
-        
         genderText.text = "Gender:"
         speciesText.text = "Species:"
         typeText.text = "Type:"
         
+        let cellHeight = 124
+        
         if viewModel.type.isEmpty {
             typeLabel.text = "None"
+        } else if viewModel.type.count <= 25 {
+            typeLabel.text = viewModel.type
+            typeLabel.textAlignment = .right
+        } else {
+            let firstLine = String(viewModel.type.prefix(10))
+            let secondLine = String(viewModel.type.suffix(from: viewModel.type.index(viewModel.type.startIndex, offsetBy: 10)))
+            typeLabel.text = "\(firstLine)\n\(secondLine)"
+            typeLabel.textAlignment = .right
+            frame.size.height = CGFloat(cellHeight + 20)
         }
     }
     
