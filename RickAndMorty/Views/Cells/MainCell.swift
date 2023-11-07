@@ -50,8 +50,20 @@ class MainCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func truncateText(_ text: String, to limit: Int) -> String {
+        if text.count <= 40 {
+            nameLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+            return text
+        } else {
+            nameLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+            return text
+        }
+    }
+    
     func setupCell(viewModel: MainCellViewModel) {
-        nameLabel.text = viewModel.name
+        let maxCharacterLimit = 30
+        let nameText = viewModel.name
+        nameLabel.text = truncateText(nameText!, to: maxCharacterLimit)
         
         let placeholderImage = UIImage(named: "placeholder")
         

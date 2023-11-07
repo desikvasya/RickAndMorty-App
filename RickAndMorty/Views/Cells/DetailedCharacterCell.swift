@@ -14,6 +14,9 @@ class DetailedCharacterCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
+        label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
         label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
@@ -52,7 +55,8 @@ class DetailedCharacterCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             characterImage.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             characterImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            name.centerXAnchor.constraint(equalTo: centerXAnchor),
+            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            name.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             name.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 20),
             status.centerXAnchor.constraint(equalTo: centerXAnchor),
             status.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 10),

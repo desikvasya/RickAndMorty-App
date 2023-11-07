@@ -103,7 +103,8 @@ class InfoCell: UICollectionViewCell {
     func setupCell(viewModel: DetailedViewmodel) {
         headerLabel.text = "Info"
         genderLabel.text = viewModel.genderString
-        speciesLabel.text = viewModel.species
+        speciesLabel.text = viewModel.species == "unknown" ? "Unknown" : viewModel.species
+
         genderText.text = "Gender:"
         speciesText.text = "Species:"
         typeText.text = "Type:"
